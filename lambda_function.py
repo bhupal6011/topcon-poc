@@ -7,7 +7,7 @@ def lambda_handler(event, context):
     
     response = {
         "statusCode": 200,
-        "body": "Hello from Lambda! this is Bhupal Prasanthi"
+        "body": "Hello from Lambda! this is bhupalkrishnareddy"
     }
     
     return response
