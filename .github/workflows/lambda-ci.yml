@@ -51,7 +51,4 @@ jobs:
         run: |
              aws s3 cp lambda_function.zip s3://${{secrets.AWS_S3_BUCKET}}/lambda_function.zip
 
-                       
-
-
-            
+                                   
