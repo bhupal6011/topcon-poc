@@ -38,15 +38,7 @@ jobs:
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             aws-region: us-east-1
-
-      #- name: Authenticate with CodeArtifact
-      #  run: |
-      #        export CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token --domain ${{ secrets.AWS_CODEARTIFACT_DOMAIN }} --domain-owner ${{ secrets.AWS_CODEARTIFACT_DOMAIN_OWNER }} --query authorizationToken --output text)
-      #        aws configure set codeartifact_auth_token $CODEARTIFACT_AUTH_TOKEN 
-              
-      #- name: Upload to CodeArtifact
-       # run: |
-       #      aws codeartifact put-package-asset --domain ${{ secrets.AWS_CODEARTIFACT_DOMAIN }} --domain-owner ${{ secrets.AWS_CODEARTIFACT_DOMAIN_OWNER }} --repository ${{ secrets.AWS_CODEARTIFACT_REPOSITORY }} --asset lambda_function.zip --asset-name lambda_function.zip
+            
       - name: Upload to CodeArtifact to S3
         run: |
              aws s3 cp lambda_function.zip s3://${{secrets.AWS_S3_BUCKET}}/lambda_function.zip
