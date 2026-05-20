@@ -4,7 +4,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket         = "mybucket6011"
+    bucket         = "my-aw-sdemo"
     key            = "lambda-module/terraform.tfstate"
     region         = "us-east-1"
     #dynamodb_table = "terraform-lock-table2"    # Replace with your DynamoDB table name
