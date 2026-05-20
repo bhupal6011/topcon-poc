@@ -7,6 +7,7 @@ resource "aws_lambda_function" "my_lambda" {
   timeout       = var.lambda_timeout
   s3_bucket     = var.lambda_s3_bucket   # Use this when uploading zip from s3 bucket
   s3_key       = var.lambda_s3_key       # Use this when uploading zip from s3 bucket
+  source_code_hash = filebase64sha256("lambda_function.zip")
   s3_object_version =  aws_s3_bucket_object.object.version_id 
   # Environment variables (optional)
   environment {
