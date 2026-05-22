@@ -54,3 +54,8 @@ variable "environment" {
    #default     = "dev"  
 }
 
+variable "terraform_state_file_key"  {
+description = "state file stoarge location"
+type = string
+  
+}
