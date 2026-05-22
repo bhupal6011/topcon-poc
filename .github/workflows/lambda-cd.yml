@@ -36,8 +36,15 @@ jobs:
         run: |
              aws s3 cp s3://${{secrets.AWS_S3_BUCKET}}/lambda_function.zip lambda_function.zip    
 
+    #  - name: Terraform Init
+    #    run: terraform init
+      
       - name: Terraform Init
-        run: terraform init
+        run: |
+              terraform init \
+               -backend-config="bucket=my-terraform-state-bucket" \
+               -backend-config="key=${{ github.ref_name }}/terraform.tfstate" \
+               -backend-config="region=us-east-1"  
 
       - name: Terraform Validate
         run: terraform validate
