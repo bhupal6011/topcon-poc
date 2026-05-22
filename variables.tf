@@ -47,3 +47,10 @@ variable "lambda_s3_key" {
   type        = string
   #default     = "lambda_function.zip"  # Leave empty if uploading locally
 }
+
+variable "environment" {
+  description = "Environment detials to be selected"
+  type = string
+   #default     = "dev"  
+}
+

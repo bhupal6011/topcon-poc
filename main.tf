@@ -1,5 +1,5 @@
 resource "aws_lambda_function" "my_lambda" {
-  function_name = var.lambda_function_name
+  function_name = "${var.lambda_function_name}-${var.environment}"
   handler       = var.lambda_handler     #lambda_function.lambda_handler
   runtime       = var.lambda_runtime
   role          = aws_iam_role.lambda_exec_role.arn
