@@ -1,7 +1,7 @@
 # iam.tf
 
 resource "aws_iam_role" "lambda_exec_role" {
-  name = "${var.lambda_function_name}_exec_role"
+  name = "${var.lambda_function_name}_exec_role-${var.environment}"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -19,7 +19,7 @@ resource "aws_iam_role" "lambda_exec_role" {
 
 # Basic permissions for logging to CloudWatch
 resource "aws_iam_policy" "lambda_logging_policy" {
-  name = "${var.lambda_function_name}_logging_policy"
+  name = "${var.lambda_function_name}_logging_policy-${var.environment}"
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
