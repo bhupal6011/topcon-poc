@@ -42,13 +42,13 @@ jobs:
       - name: Terraform Init
         run: |
               terraform init \
-               -backend-config="key=lambda-module/dev/terraform.tfstate"                
+               -backend-config="key=lambda-module/qa/terraform.tfstate"                
 
       - name: Terraform Validate
         run: terraform validate
 
       - name: Terraform Apply
-        run: terraform apply  -var-file="terraform.dev.tfvars" -auto-approve
+        run: terraform apply  -var-file="terraform.qa.tfvars" -auto-approve
 
      # - name: Terraform Destroy
      #   run: terraform destroy  -var-file="terraform.qa.tfvars" -auto-approve  
