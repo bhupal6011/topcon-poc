@@ -20,7 +20,7 @@ resource "aws_lambda_function" "my_lambda" {
 
 
 resource "aws_lambda_alias" "lambda_alias" {
-  name             = "current"
+  name             = var.lambda_version_name
   function_name    = aws_lambda_function.my_lambda.function_name
   function_version = var.lambda_version
 }

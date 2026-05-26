@@ -58,7 +58,9 @@ variable "lambda_version" {
   type = string
 }
 
-
+variable "lambda_version_name" {
+  type = string
+}
 
 variable "terraform_state_file_key"  {
 description = "state file stoarge location"
