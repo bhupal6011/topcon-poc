@@ -54,8 +54,15 @@ variable "environment" {
    #default     = "dev"  
 }
 
+variable "lambda_version" {
+  type = string
+}
+
+
+
 variable "terraform_state_file_key"  {
 description = "state file stoarge location"
 type = string
   
 }
+
