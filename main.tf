@@ -18,13 +18,13 @@ resource "aws_lambda_function" "my_lambda" {
   }
 }
 
-
+/*
 resource "aws_lambda_alias" "lambda_alias" {
   name             = var.lambda_version_name
   function_name    = aws_lambda_function.my_lambda.function_name
   function_version = var.lambda_version
 }
-
+*/
 
 
 # Permission for S3 to invoke Lambda
